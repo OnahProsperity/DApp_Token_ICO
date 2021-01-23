@@ -12,6 +12,9 @@ App = {
     return App.initWeb3();
   },
 
+  // await migration from web3JS to ethersJS
+  // await responsive UI interaction.
+  // await the use of react 16.18
   initWeb3: function() {
     if (typeof web3 !== 'undefined') {
       // If a web3 instance is already provided by Meta Mask.

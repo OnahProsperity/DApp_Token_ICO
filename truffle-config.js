@@ -1,7 +1,6 @@
 require('dotenv').config();
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require("web3");
-const mnemonic = "mind retreat mind endorse improve lawsuit drastic object face exotic domain diet";
 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
@@ -12,11 +11,13 @@ module.exports = {
       port: "7545",
       network_id: "*" // match any network id
     },
+
+    // it is for development purporser
     ropsten: {
       provider: function() {
         return new HDWalletProvider(
           mnemonic,
-          `https://ropsten.infura.io/v3/962b5203218a4614b9f2fcdd5be1b013`
+          `https://ropsten.infura.io/v3/$(INFURA_KEY)`
         )
       },
       gas: 5000000,
